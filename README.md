@@ -2,6 +2,8 @@
 
 Easily mint non-fungible tokens via an API
 
+![NFT Minter Create](docs/screenshot_create_nft.jpg)
+
 ### Example Configuration: 
 * Blockchain: Ethereum
 * Testnet: Rinkeby
