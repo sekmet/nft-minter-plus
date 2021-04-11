@@ -1,0 +1,12 @@
+/home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/NFT/contracts/rust/target/debug/deps/borsh-0438691079c99af7.rmeta: /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/lib.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/mod.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/hint.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema_helpers.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/ser/mod.rs
+
+/home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/NFT/contracts/rust/target/debug/deps/libborsh-0438691079c99af7.rlib: /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/lib.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/mod.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/hint.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema_helpers.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/ser/mod.rs
+
+/home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/NFT/contracts/rust/target/debug/deps/borsh-0438691079c99af7.d: /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/lib.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/mod.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/hint.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema_helpers.rs /home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/ser/mod.rs
+
+/home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/lib.rs:
+/home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/mod.rs:
+/home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/de/hint.rs:
+/home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema.rs:
+/home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/schema_helpers.rs:
+/home/sekmet/.cargo/registry/src/github.com-1ecc6299db9ec823/borsh-0.7.2/src/ser/mod.rs:

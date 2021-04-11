@@ -1,0 +1,45 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+**/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+**/build
+**/dist
+
+# misc
+.env
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+lib/contracts
+lib/deployinfo.json
+minter_server/contracts.json
+minter_server/ipfs
+minter_server/orbitdb
+minter_server/report.*.json
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vscode/
+
+/temp_metadata
+temp_metadata/README.md
+
+/artifacts
+/cache
+/typechain
+/deployments
+
+.next/
+out/
+
+commit.sh
