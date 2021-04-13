@@ -35,7 +35,7 @@ module.exports = function(deployer, network, accounts) {
   const contractUri = erc1155config.gatewayUrl + "/" + erc1155config.contractUriHash;
   const name = contractconfig.name;
   const symbol = contractconfig.symbol;
-  ownerAddress = '0x7EF99B0E5bEb8ae42DbF126B40b87410a440a32a';//accounts[0];
+  ownerAddress = '0x122278A06753D5af91383848B13CF136F9C6f721';//accounts[0];
   deployNetwork = network;
 
   console.log("baseMetadataUri : " + baseMetadataUri)

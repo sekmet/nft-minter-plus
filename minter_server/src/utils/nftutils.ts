@@ -15,7 +15,7 @@ const wallet = new ethers.Wallet(MNEMONIC);
 const OWNER_ADDRESS = wallet.address;
 
 
-let RPC_URL;
+let RPC_URL: string;
 
 if (NETWORK === 'localhost')
 {
@@ -27,14 +27,15 @@ else
     RPC_URL = `https://${NETWORK}.infura.io/v3/${INFURA_KEY}`;
 }
 
-console.log(OWNER_ADDRESS, MNEMONIC);
+console.log(OWNER_ADDRESS, MNEMONIC, CONTRACT_ADDRESS);
 
 const provider = new HDWalletProvider(MNEMONIC, RPC_URL);
 const web3Instance = new web3(provider);
 
 export async function mintNFT(tokenid, address) {
 
-  const nftContract = new web3Instance.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS, { gasLimit: "1000000" })
+  const nftContract = new web3Instance.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS, { gasLimit: "1000000" });
+  //console.log(nftContract)
 
   let result;
 

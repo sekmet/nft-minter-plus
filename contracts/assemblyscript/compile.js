@@ -15,7 +15,7 @@ function compileContract(fqPath) {
     .split(/[\.\/]/)
     .pop();
 
-  const output = `out/${name}-as.wasm`;
+  const output = `build/release/main.wasm`;
 
   console.log(`\ncompiling contract [ ${folder} ] to [ ${output} ]`);
 
@@ -25,7 +25,7 @@ function compileContract(fqPath) {
     [
       "-O3z",
       "--debug", // Shows debug output
-      "--validate", // Validate the generated wasm module
+      //"--validate", // Validate the generated wasm module
       "--measure", // shows compiler run time
       "--runPasses",
       "inlining-optimizing,dce", // inlines to optimize and removes deadcode

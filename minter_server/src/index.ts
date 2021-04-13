@@ -1,12 +1,13 @@
-import * as cors from 'cors';
-import * as express from 'express';
+import cors from 'cors';
+import express from "express";
+import bodyParser from "body-parser";
 
 import { join } from 'path';
 
 import * as NFTUtils from './utils/nftutils';
 
 const PORT = Number(process.env.PORT || 3001);
-let bodyParser = require('body-parser');
+//let bodyParser = require('body-parser');
 
 const app = express();
 app.use(cors());
@@ -22,7 +23,7 @@ app.use(express.static(join(__dirname, 'public')));
 app.post('/api/mint', async (req: any, res: any) => {
   // check that we have the required values
   console.log(req.body.tokenid, req.body.address)
-  if (req.body.tokenid && req.body.address) {
+  if (req.body.address) {
     let result = await NFTUtils.mintNFT(req.body.tokenid, req.body.address);
     res.json(
       {

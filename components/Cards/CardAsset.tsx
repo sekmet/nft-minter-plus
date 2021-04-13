@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function CardAsset({
-  Title,
-  Description,
-  IpfsHash
-}) {
+export default function CardAsset({Title, Description, IpfsHash}) {
   return (
     <>
 <section className="mx-auto p-6 md:p-12 antialiased">

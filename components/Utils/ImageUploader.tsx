@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+declare var FileReader: any;
+
 export default class ImageUpload extends React.Component<any, any> {
     constructor(props: any) {
       super(props);

@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useReducer, useState } from 'react';
-import classnames from 'classnames';
+//import classnames from 'classnames';
 //import * as FormData from 'form-data';
+import fetch from "node-fetch";
 import { ethers } from "ethers";
 import HeaderMinterStats from "../../components/Headers/HeaderMinterStats";
 import config from '../../lib/config';
@@ -13,7 +14,9 @@ declare global {
   }
 }
 
-const formReducer = (state, event) => {
+declare var window: any;
+
+const formReducer = (state:any, event:any) => {
   return {
     ...state,
     [event.target.name]: event.target.value
@@ -26,7 +29,7 @@ export default function CardMinter() {
   const [formMintData, setFormMintData] = useReducer(formReducer, {});
   const [formMetaData, setFormMetaData] = useReducer(formReducer, {});
   
-  const [activeTab, setActiveTab] = useState('');
+  //const [activeTab, setActiveTab] = useState('');
   const [web3Provider, setWeb3Provider] = useState(null);
   const [metamaskProvider, setMetamaskProvider] = useState(null);
   const [contract, setContract] = useState(null);
@@ -40,9 +43,9 @@ export default function CardMinter() {
 
   const [inProgress, setInProgress] = useState(false);
 
-  const toggle = tab => {
+  /*const toggle = tab => {
     if(activeTab !== tab) setActiveTab(tab);
-  }
+  }*/
 
   const initializeProvider = () => {
 
@@ -55,8 +58,8 @@ export default function CardMinter() {
         
         switch (networkName) {
           case "rinkeby":
-            let rinkebyProvider = new ethers.providers.JsonRpcProvider("https://rinkeby.infura.io/v3/" + config.infuraKey);
-            let metamaskProvider = new ethers.providers.Web3Provider(window.ethereum);
+            let rinkebyProvider: any = new ethers.providers.JsonRpcProvider("https://rinkeby.infura.io/v3/" + config.infuraKey);
+            let metamaskProvider: any = new ethers.providers.Web3Provider(window.ethereum);
             setWeb3Provider(rinkebyProvider);
             setMetamaskProvider(metamaskProvider);
             setRefreshingContract(true);
@@ -74,6 +77,7 @@ export default function CardMinter() {
       contractAbi = contractRoot.contracts[contractName].abi;
     })
 
+
     await window.ethereum.enable()
     erc1155 = new ethers.Contract(contractAddress, contractAbi, web3Provider);
     metamaskContract = new ethers.Contract(contractAddress, contractAbi, metamaskProvider.getSigner());
@@ -81,6 +85,7 @@ export default function CardMinter() {
     metamaskContract.on("TransferSingle", (sender, from, to, id, amount, eventInfo) => {
       setLogText("Token id " + id + " created.");
       setReceiptLink("https://rinkeby.etherscan.io/tx/" + eventInfo.transactionHash);
+      console.log(receiptLink)
     });
 
     setReadOnlyContract(erc1155);
@@ -93,10 +98,11 @@ export default function CardMinter() {
     setContractUri(contractUri);
 
     setRefreshingContract(false);
+  
   }
 
   useEffect(() => {
-      setActiveTab(contractRoot.name);
+      //setActiveTab(contractRoot.name);
 
       // on first call, initialize web3Provider
       if (web3Provider === null)
@@ -125,7 +131,7 @@ export default function CardMinter() {
     setLogText("Creating " + parsedData["initialSupply"] + " tokens for address " + parsedData["ownerAddress"] + "...");
     setReceiptLink(null);
 
-    let result;
+    let result: any;
 
     try {
     result = await contract.create(
@@ -222,7 +228,7 @@ const handleGetMetadata = async (event) => {
     let result = await readOnlyContract.uri(parsedData["metadata"]);
     let metadata = await (await fetch(result)).json();
 
-    setLogText("uri: " + result + "--- " + "metadata: " + JSON.stringify(metadata));
+    setLogText("uri: " + result + "\n" + "metadata: " + JSON.stringify(metadata, null, "\t"));
 
   } catch (e) {}
 
@@ -232,13 +238,7 @@ const handleGetMetadata = async (event) => {
 let _contract: string[];
 Object.keys(contractRoot.contracts).map(contract => {
     _contract = [contract,contractRoot.contracts[contract].address];
-    /*<Fragment key={contract}>
-    <h5>Contract Name: {contract}</h5>
-    <h6>Address: {contractRoot.contracts[contract].address}</h6>
-    <h6>Owner: {contractOwner ? contractOwner : "Loading..."}</h6>
-    <h6>URI: {contractUri ? contractUri : "Loading..."}</h6> */
 })
-
 
   return (
     <Fragment>
@@ -418,7 +418,7 @@ Object.keys(contractRoot.contracts).map(contract => {
     <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
     <div className="rounded-t bg-white mb-0 px-6 py-6">
     <div className="text-center flex justify-between">
-    <h6 className="text-blueGray-700 text-xl font-bold">Get Token Metadata</h6>
+    <h6 className="text-blueGray-700 text-xl font-bold">Check Balance</h6>
     
     <button
         className={`${inProgress ? 'bg-green-100 text-blueGray-100' : 'bg-green-500'} active:bg-green-300 text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150`}
@@ -483,8 +483,58 @@ Object.keys(contractRoot.contracts).map(contract => {
         </div>
 
         <div className="flex-auto px-4 py-3 pt-0">
-        <textarea className="text-xs" style={{width: "100%", height: "160px", backgroundColor: "#000000", color: "#ffffff" }} value={logText} />
+        <textarea className="text-xs" style={{width: "100%", height: "179px", backgroundColor: "#000000", color: "#ffffff" }} defaultValue={logText} />
         </div>
+
+
+    <div className="w-full xl:w-12/12 lg:w-12/12 px-4">
+    <form onSubmit={handleGetMetadata}>
+    <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+
+    <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
+    
+    <h6 className="text-indigo-600 text-md mt-1 mb-6 font-bold uppercase">
+        Get token metadata information
+    </h6>
+    <div className="flex flex-wrap">
+        <div className="w-full lg:w-12/12 px-4">
+        <div className="relative w-full mb-3">
+            <label
+            className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+            htmlFor="metadataId"
+            >
+            Token Id
+            </label>
+            <input
+            type="number"
+            name="metadata"
+            id="metadataId"
+            onChange={setFormMetaData}
+            className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+            defaultValue="0"
+            />
+        </div>
+
+        </div>        
+
+        <button
+        className={`${inProgress ? 'bg-indigo-100 text-blueGray-100' : 'bg-indigo-500'} active:bg-indigo-300 text-white font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150`}
+        disabled={inProgress}
+        type="submit"
+        >
+            Get Metadata
+        </button>
+
+        </div>
+   
+        </div>
+        
+        </div>
+        </form>
+
+        </div>
+
+
 
       </div>
       </div>

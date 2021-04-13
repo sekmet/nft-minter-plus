@@ -4,7 +4,7 @@ import React from "react";
 
 import CardAsset from "./CardAsset";
 
-export default function HeaderStats({feed}) {
+export default function HeaderStats(feed: any) {
   return (
     <>
       {/* Header */}
@@ -13,7 +13,7 @@ export default function HeaderStats({feed}) {
           <div>
             {/* Card stats */}
             <div className="flex flex-wrap">
-            {feed.length ? feed.map((post) => (
+            {feed.length ? feed.map((post: any) => (
               <div key={post.id} className="w-full lg:w-6/12 xl:w-4/12 px-4">
                 <CardAsset
                   Title={post.title}

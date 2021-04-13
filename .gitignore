@@ -26,6 +26,8 @@ minter_server/ipfs
 minter_server/orbitdb
 minter_server/report.*.json
 
+neardev/
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

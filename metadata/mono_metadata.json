@@ -3,10 +3,10 @@
     "contractUri":
     {
       "description": "URI for the API for NFTs. TMI!",
-      "external_link": "https://github.com/alto-io/nft-minter",
+      "external_link": "https://github.com/sekmet/nft-minter-plus",
       "image": "smile37.png",
-      "name": "Tokens created by nft-minter",
-      "symbol": "NFTM"
+      "name": "Tokens created by nft-minter-plus",
+      "symbol": "NFTMP"
     },
     "metadata": [
         {

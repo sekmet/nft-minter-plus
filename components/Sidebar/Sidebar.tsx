@@ -131,26 +131,49 @@ export default function Sidebar() {
               </li>
 
               <li className="items-center">
-                <Link href="/admin/minter">
+                <Link href="#">
                   <a
                     href="#pablo"
                     className={
                       "text-xs uppercase py-3 font-bold block " +
-                      (router.pathname.indexOf("/admin/minter") !== -1
+                      (router.pathname.indexOf("/admin/minter-ethereum") !== -1
                         ? "text-lightBlue-500 hover:text-lightBlue-600"
                         : "text-blueGray-700 hover:text-blueGray-500")
                     }
                   >
                     <i
                       className={
-                        "fas fa-check mr-2 text-sm " +
-                        (router.pathname.indexOf("/admin/minter") !== -1
+                        "fas fa-print mr-2 text-sm " +
+                        (router.pathname.indexOf("/admin/minter-ethereum") !== -1
                           ? "opacity-75"
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
                     Minter
                   </a>
+                </Link>
+              </li>
+
+              <li className="inline-flex">
+              <Link href="/admin/minter-ethereum">
+                <a
+                  href="/admin/minter-ethereum"
+                  className="text-blueGray-700 hover:text-blueGray-500 text-xs block no-underline font-semibold"
+                >
+                  <i className="fa fa-th mr-2 text-blueGray-300 text-base"></i>
+                  Ethereum Network
+                </a>
+                </Link>
+              </li>
+              <li className="inline-flex">
+              <Link href="/admin/minter-near">
+                <a
+                  href="/admin/minter-near"
+                  className="text-blueGray-700 hover:text-blueGray-500 text-xs block mb-4 no-underline font-semibold"
+                >
+                  <i className="fa fa-th mr-2 text-blueGray-300 text-base"></i>
+                  Near Network
+                </a>
                 </Link>
               </li>
 

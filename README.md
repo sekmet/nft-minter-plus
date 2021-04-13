@@ -2,6 +2,8 @@
 
 ## Easily mint non-fungible tokens via an API
 
+![NFT Minter](docs/minter_2_v01.jpg)
+
 ![NFT Minter Create](docs/screenshot_create_nft.jpg)
 
 ![NFT Minter](docs/minter_v01.jpg)

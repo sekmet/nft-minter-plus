@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Router from "next/router";
+import fetch from "node-fetch";
 
 // components
 
 export default function CardAssetForm() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [authorid, setAutorid] = useState(2);
+  const [authorid, setAutorid] = useState(0);
 
   const submitData = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -22,6 +23,14 @@ export default function CardAssetForm() {
       console.error(error);
     }
   };
+
+
+  React.useEffect(() => {
+
+    setAutorid(2)
+
+  },[])
+
 
   return (
     <>
@@ -50,7 +59,7 @@ export default function CardAssetForm() {
                     className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                     placeholder="Your NFT name"
                     autoFocus
-                    onChange={(e) => setTitle(e.target.value)}
+                    onChange={(e) => setTitle(title)}
                     value={title}
                   />
                 </div>
@@ -66,7 +75,7 @@ export default function CardAssetForm() {
                   </label>
                   <textarea
                     className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    onChange={(e) => setContent(e.target.value)}
+                    onChange={(e) => setContent(content)}
                     rows={8}
                     value={content}
                     placeholder="My awesome new creation... :)"

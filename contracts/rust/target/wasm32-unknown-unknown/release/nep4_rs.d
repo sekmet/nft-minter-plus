@@ -1,1 +1,1 @@
-/home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/NFT/contracts/rust/target/wasm32-unknown-unknown/release/nep4_rs.wasm: /home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/NFT/contracts/rust/src/lib.rs
+/home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/nft-minter-plus/contracts/rust/target/wasm32-unknown-unknown/release/nep4_rs.wasm: /home/sekmet/DEVELOPMENT/HACKATHONS/GR9/NFTMINTER/nft-minter-plus/contracts/rust/src/lib.rs

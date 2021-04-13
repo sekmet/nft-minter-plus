@@ -4,13 +4,11 @@ import App from "next/app";
 import { Provider } from "next-auth/client";
 import Head from "next/head";
 import Router from "next/router";
-
 import PageChange from "../components/PageChange/PageChange";
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "../styles/tailwind.css";
 
-Router.events.on("routeChangeStart", (url) => {
+/*Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
   document.body.classList.add("body-page-transition");
   ReactDOM.render(
@@ -25,7 +23,8 @@ Router.events.on("routeChangeComplete", () => {
 Router.events.on("routeChangeError", () => {
   ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"));
   document.body.classList.remove("body-page-transition");
-});
+});*/
+
 
 export default class MyApp extends App<any, any> {
 
@@ -44,8 +43,8 @@ export default class MyApp extends App<any, any> {
     const Layout = Component.layout || (({ children }) => <>{children}</>);
 
     return (
-      <Provider session={pageProps.session}>
       <React.Fragment>
+        <Provider session={pageProps.session}>
         <Head>
           <meta
             name="viewport"
@@ -56,8 +55,9 @@ export default class MyApp extends App<any, any> {
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        </Provider>
       </React.Fragment>
-      </Provider>
     );
+  
   }
 }
