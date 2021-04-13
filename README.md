@@ -1,8 +1,10 @@
-# nft-minter-plus - Updates In progress
+# NFT Minter+ - Updates In progress
 
-Easily mint non-fungible tokens via an API
+## Easily mint non-fungible tokens via an API
 
 ![NFT Minter Create](docs/screenshot_create_nft.jpg)
+
+![NFT Minter](docs/minter_v01.jpg)
 
 ### Example Configuration: 
 * Blockchain: Ethereum
@@ -22,16 +24,12 @@ PINATA_API_KEY=
 PINATA_SECRET_API_KEY=
 METADATA_LOCATION=pinata
 NETWORK=rinkeby
-```
-
-```
-# packages/client/.env
-REACT_APP_INFURA_API_KEY=
+NEXT_PUBLIC_INFURA_API_KEY=
 SKIP_PREFLIGHT_CHECK=true
 ```
 
 ```
-# packages/server/.env
+# minter_server/.env
 MNEMONIC=
 INFURA_API_KEY=
 ```

@@ -98,7 +98,7 @@ export default function CardAssetForm() {
               Your Asset Properties
             </h6>
             <div className="flex flex-wrap mb-24">
-              <h3>Proprties Here</h3>
+              <small>[ Your properties here ]</small>
             </div>
 
 
